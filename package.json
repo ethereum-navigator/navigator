@@ -12,6 +12,10 @@
   "keywords": [],
   "author": "Sebastian Gerske",
   "license": "MIT",
+  "repository": {
+    "url": "git+https://github.com/ethereum-navigator/navigator.git",
+    "type": "git"
+  },
   "dependencies": {
     "@ethereum-navigator/atlas": "^0.1.1",
     "web3": "^1.2.1"
