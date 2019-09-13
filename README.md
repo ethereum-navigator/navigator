@@ -16,14 +16,34 @@ An access layer on top of the ethereum-navigator/atlas written in pure JavaScrip
 npm install --save @ethereum-navigator/navigator
 ```
 
+### API
+
+```text
+Get network from JSON-RPC
+navigate({ rpcUrl: string }) returns: network
+
+Get network from networkId and / or chainId
+lookup(networkId: string, chainId*: string) returns: network
+```
+
+\* = optional
+
 ### Usage
 
 ```javascript
-const Navigator = require('@ethereum-navigator/navigator');
+const { navigate } = require('@ethereum-navigator/navigator');
 
-const network = await Navigator.navigate({
+const network = await navigate({
     rpcUrl: "https://your-rpc-url"
 })
+```
+
+```javascript
+const { lookup } = require('@ethereum-navigator/navigator');
+
+const networkIdHex = '0x1';
+
+const network = lookup(networkIdHex)
 ```
 
 ### License
