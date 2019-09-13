@@ -1,10 +1,21 @@
-const atlas = require('@ethereum-navigator/atlas')
+const atlas = require('@ethereum-navigator/atlas');
 
 function lookup(
-    networkId
+    networkId,
+    chainId = null
 ) {
-    const network = atlas.find((network) => network.networkId.toLowerCase() === networkId.toLowerCase())
-    return network
+    const networks = atlas.filter((network) => network.networkId.toLowerCase() === networkId.toLowerCase());
+
+    if (chainId) {
+        const network = networks.find((network) => network.chainId &&
+            network.chainId.toLowerCase() === chainId.toLowerCase());
+
+        if (network) {
+            return network
+        }
+    }
+
+    return networks[0]
 }
 
-module.exports = lookup
+module.exports = lookup;
