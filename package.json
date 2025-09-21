@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@ethereum-navigator/atlas": "^0.7.2",
-    "web3": "^1.2.7"
+    "web3": "^4.16.0"
   },
   "devDependencies": {
     "mocha": "^10.2.0"
